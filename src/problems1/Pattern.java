@@ -89,17 +89,20 @@ class Patterns {
 
 	// 8 Odd Numbers
 	public static void pattern8(int n, int m) {
+		
 		int counter = 1;
 		for(int i = 1; i <=n; i++) {
 			if(i % 2 != 0){
 				System.out.print(i + " ");
-				if(counter % 5 == 0) {
+				if(counter % m == 0) {
 					System.out.println();
 				}
 				counter++;
 			}
 		}
 	}
+
+	
 
 	// 9 Even Numbers
 	public static void pattern9(int n, int m) {
@@ -527,7 +530,7 @@ public class Pattern {
 //		Patterns.pattern7(50, 5);
 //		System.out.println("\n-----------------------------------------------");
 ////		8 Odd numbers
-//		Patterns.pattern8(50, 5);
+//		Patterns.pattern8(100, 10);
 //		System.out.println("\n-----------------------------------------------");
 ////		9 Even numbers
 //		Patterns.pattern9(50, 5);
