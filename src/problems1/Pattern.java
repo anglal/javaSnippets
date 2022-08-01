@@ -414,6 +414,89 @@ class Patterns {
 		return Integer.valueOf(reversed);
 	}
 	
+	// 27) Write a Java program to find if the given number is palindrome or not
+	public static void checkPal(int data) {
+		int reversed = 0;
+		int data1 = data;
+		while(data != 0) {
+			reversed = reversed * 10 + data % 10;
+			data /= 10;
+		}
+		if(reversed == data1) {
+			System.out.println("It is pallindrome.");
+		}else {
+			System.out.println("It is not pallindrome.");
+		}
+	}
+	
+	// 28) Write a program to print first 5 values which are divisible by 2, 3, and 5.
+	public static void printVals() {
+		int counter = 0;
+		int num = 1;
+		
+		while(true)
+		{
+			if(num % 2 == 0 && num % 3 ==0 && num % 5 ==0) {
+				System.out.println(num);
+				counter++;
+				if(counter % 5 == 0) {
+					break;
+				}
+			}
+			num++;
+		}
+//		for(int i = 0; i <= 500; i++) {
+//			if(i % 2 == 0 && i % 3 == 0 && i%5 == 0) {
+//				System.out.println(i);
+//				counter ++;
+//				if(counter % 5 == 0) {
+//					break;
+//				}
+//			}
+//		}
+	}
+	
+	// 20) Write a program that displays a menu with options 1. Add 2. Sub Based on the options chosen, 
+	// read 2 numbers and perform the relevant operation. After performing the operation, the program should 
+	// ask the user if he wants to continue. If the user presses y or Y, then the program should continue displaying 
+	// the menu else the program should terminate. [ Note: Use Scanner class, you can take help from the trainer regarding the same ]
+	public static void displayMenu() {
+		String cont = "";
+		Scanner scanner = new Scanner(System.in);
+		do {
+			System.out.println("Enter 1 to add:\nEnter 2 to subtact:\n");
+			int input = scanner.nextInt();
+			scanner.nextLine();
+			int first, second = 0;
+			if(input == 1) {
+				System.out.println("Enter the first number:");
+				first = scanner.nextInt();
+				scanner.nextLine();
+				System.out.println("Enter the second number:");
+				second = scanner.nextInt();
+				scanner.nextLine();
+				System.out.println("The sum is: " + (first + second)+'.');
+				System.out.println("Continue?");
+				cont = scanner.next().toLowerCase();
+				scanner.nextLine();
+				
+				
+			}else if(input == 2) {
+				System.out.println("Enter the first number:");
+				first = scanner.nextInt();
+				scanner.nextLine();
+				System.out.println("Enter the second number:");
+				second = scanner.nextInt();
+				scanner.nextLine();
+				System.out.println("The difference is: " + (first - second)+'.');
+				System.out.println("Continue?");
+				cont = scanner.next().toLowerCase();
+				scanner.nextLine();
+			}
+				
+		}while(cont.equals("y"));
+		scanner.close();
+	}
 	
 }
 
@@ -514,9 +597,19 @@ public class Pattern {
 ////		25) 
 //		Patterns.floydFormat(5);
 //		System.out.println("\n-----------------------------------------------");
+////		26)
+//		System.out.println(Patterns.reverse(2001));
+//		System.out.println("\n-----------------------------------------------");
+////        27)
+//		Patterns.checkPal(12321);
+//		System.out.println("\n-----------------------------------------------");
+////		28)
+//      Patterns.printVals();
+//		System.out.println("\n-----------------------------------------------");
+//		28)
+//		Patterns.displayMenu();
 		
-		System.out.println(Patterns.reverse(2001));
+		
 	}
-	
 
 }
